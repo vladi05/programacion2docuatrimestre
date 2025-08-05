@@ -1,0 +1,137 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace practica_de_funciones
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            // Saludar();
+            // Sumar();
+            //Validar();
+            Menu();
+        }
+        public static void Menu(){
+
+            int opcion; 
+        do {
+        Console.WriteLine("Menu");
+        Console.WriteLine("****************** ");
+        Console.WriteLine("1- saludo ");
+        Console.WriteLine("2- suma ");
+        Console.WriteLine("3- validacion de un entero ");
+        Console.WriteLine("4- validacion de un entero ");
+        Console.WriteLine("5- salir ");
+        Console.WriteLine("****************** ");
+
+               
+        opcion = int.Parse(Console.ReadLine());
+
+                switch (opcion)
+                {
+
+                    case 1:
+                        {
+                            Saludar();
+                            break;
+                        }
+
+                    case 2:
+                        {
+                            Sumar();
+
+                            break;
+                        }
+
+                    case 3:
+                        {
+                            Validar();
+                            break;
+
+
+
+                        }
+                    case 4:
+                        {
+                            Console.WriteLine("opcion no implementada");
+                            break;
+                        }
+                }
+
+} while (opcion != 5) ;
+
+     
+
+        }
+
+
+        public static void Saludar()
+{
+
+    string NombreUsuario;
+    Console.WriteLine("ingrese su nombre: ");
+    NombreUsuario = Console.ReadLine();
+    Console.WriteLine("Hola, " + NombreUsuario + ", ¿cómo estás? ");
+}
+
+public static void Sumar()
+{
+
+    int a, b, resultado;
+
+    Console.WriteLine("ingrese el primer numero: ");
+    a = int.Parse(Console.ReadLine());
+    Console.WriteLine("ingrese el segundo numero: ");
+    b = int.Parse(Console.ReadLine());
+
+    resultado = a + b;
+
+    Console.WriteLine("el resultado de la suma de los numeros " + a + " + " + b + " es: " + resultado);
+
+}
+
+public static void Validar()
+{
+    int a, b;
+    Console.WriteLine("ingrese el primer numero: ");
+    a = int.Parse(Console.ReadLine());
+
+
+
+    while (a <= 0)
+    {
+        Console.WriteLine("el numero ingresado no es un numero entero, vuelva a ingresarlo.");
+        Console.WriteLine("ingrese el primer numero: ");
+        a = int.Parse(Console.ReadLine());
+    }
+
+
+    Console.WriteLine("ingrese el segundo numero: ");
+    b = int.Parse(Console.ReadLine());
+    while (b <= 0)
+    {
+        Console.WriteLine("el numero ingresado no es un numero entero, vuelva a ingresarlo.");
+        Console.WriteLine("ingrese el segundo numero: ");
+        b = int.Parse(Console.ReadLine());
+    }
+
+
+
+    Console.WriteLine("los numeros " + a + " y " + b + " ingresados son enteros:)");
+
+
+}
+
+        /* 
+         Crear un programa que solicite el ingreso de 2 nros por teclado y luego los muestre por 
+pantalla. Validar que los nros ingresados sean nros enteros, caso contrario volver a 
+solicitar el ingreso. Crear una función para no repeƟr código.
+         */
+
+    }
+}
