@@ -1,0 +1,114 @@
+using System;
+
+namespace progra2conosvaldo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Menu();
+        }
+
+
+
+        public static void Menu()
+        {
+
+            int opcion;
+            do
+            {
+                Console.WriteLine("Menu");
+                Console.WriteLine("****************** ");
+                Console.WriteLine("1- cargar datos de los empleados ");
+                Console.WriteLine("2- listado de los obreros ");
+                Console.WriteLine("3- listado de los administrativos ");
+                Console.WriteLine("4- total de los sueldos ");
+                Console.WriteLine("5- salir ");
+                Console.WriteLine("****************** ");
+
+
+                opcion = int.Parse(Console.ReadLine());
+
+                switch (opcion)
+                {
+
+                    case 1:
+                        {
+                            CargarDatosEmpleados();
+                            break;
+                        }
+
+                    case 2:
+                        {
+
+
+                            break;
+                        }
+
+                    case 3:
+                        {
+
+                            break;
+
+
+
+                        }
+                    case 4:
+                        {
+                            Console.WriteLine("opcion no implementada");
+                            break;
+                        }
+                }
+
+            } while (opcion != 5);
+
+
+
+
+        }
+
+
+
+        public static void CargarDatosEmpleados()
+        {
+            string ApNomEmp;
+            string Cuit;
+            DateTime FecNac;
+            float sueldoMensual;
+            int tipoEmpleado;
+            int[] empleados = new int[60];
+
+            for (int i = 0; i < 60; i++)
+            {
+
+               
+                Console.WriteLine("ingrese apellido y nombre del empleado: ");
+                ApNomEmp = Console.ReadLine();
+                Console.WriteLine("ingrese el cuit del empleado: ");
+                Cuit = Console.ReadLine();
+                Console.WriteLine("ingrese la fecha de nacimiento del empleado: ");
+                FecNac = DateTime.Parse(Console.ReadLine());
+                Console.WriteLine("ingrese el sueldo mensual del empleado: ");
+                sueldoMensual = double.Parse(Console.ReadLine());
+                Console.WriteLine("ingrese el tipo de empleado (1- obrero, 2- administrativo): ");
+                tipoEmpleado = int.Parse(Console.ReadLine());
+                if (tipoEmpleado == 1 || tipoEmpleado == 2)
+                {
+
+                    Console.WriteLine("Empleado registrado correctamente.");
+                }
+                else
+                {
+                    Console.WriteLine("Tipo de empleado no válido. Intente nuevamente.");
+                    Console.WriteLine("ingrese el tipo de empleado (1- obrero, 2- administrativo): ");
+                    tipoEmpleado = int.Parse(Console.ReadLine());
+                }
+                empleados[i] = int.Parse(Console.ReadLine());
+
+            }
+        }
+
+    }
+}
